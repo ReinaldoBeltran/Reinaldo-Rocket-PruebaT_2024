@@ -1,0 +1,19 @@
+<h2>Registrar Nueva Tarea</h2>
+<form (ngSubmit)="onSubmit()" #tareaForm="ngForm">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" type="text" [(ngModel)]="tarea.nombre" name="nombre" required>
+  </div>
+
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" [(ngModel)]="tarea.descripcion" name="descripcion" required></textarea>
+  </div>
+
+  <div>
+    <label for="fechaInicio">Fecha de Inicio:</label>
+    <input id="fechaInicio" type="date" [(ngModel)]="tarea.fechaInicio" name="fechaInicio" required>
+  </div>
+
+  <button type="submit" [disabled]="!tareaForm.form.valid">Registrar</button>
+</form>
